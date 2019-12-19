@@ -1,0 +1,1649 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Financial Crimes Insight for Insurance public REST APIs",
+        "description": "These are the Financial Crimes Insight for Insurance public REST APIs, used by clients to access the FCII capabilities",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsfcihost.ibm.com:9443\/"
+    ],
+    "paths": {
+        "\/ibm\/fci\/platform\/data_access\/analysis_request": {
+            "post": {
+                "summary": "Request a managed analysis to run",
+                "description": "This service can be used to initiate a managed analysis",
+                "operationId": "StartAnalysis",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "waitTime",
+                        "in": "query",
+                        "description": "wait for NN seconds, and if no response continue"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/external_alert\/analysis_result": {
+            "post": {
+                "summary": "Submit assessments from monitored analytics",
+                "description": "This method is used to submit analysis results from monitored analysis",
+                "operationId": "PostExternalAnalyticResult",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "AnalysisAssessedResults",
+                        "in": "body",
+                        "description": "An XML object corresponding to the AnalysisAssessedResults"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/token_service\/token": {
+            "get": {
+                "summary": "Obtain security token for REST execution",
+                "description": "In addition to a username and password required to execute a REST service, the platform supports enhanced cross site scripting detection and requires a service token for REST API execution.  REST services will need to supply the token as both cookie and header in a REST request. ",
+                "operationId": "GetServiceToken",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/account": {
+            "put": {
+                "summary": "Insert account data into the database",
+                "description": "This method is used to insert account data into the database.  The XML schema is defined in the ACCOUNT.XSD file.",
+                "operationId": "PutAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/account\/{id}": {
+            "get": {
+                "summary": "Retrieve account data from the database, for the id",
+                "description": "This method is used to retrieve account data from the database",
+                "operationId": "GetAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/{type}\/{remoteSystem}\/{remoteKey}\/assessments]": {
+            "get": {
+                "summary": "Return the existing assessments for the object specified",
+                "description": "This service is used to return the existing assessments for the object specified.",
+                "operationId": "RequestAssessmentValue",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "type",
+                        "in": "path",
+                        "description": "Type of object; party, account, transaction, event, or other defined object type."
+                    },
+                    {
+                        "name": "remoteSystem",
+                        "in": "path",
+                        "description": "The combination of remoteSystem and remoteKey uniquely defines an object."
+                    },
+                    {
+                        "name": "remoteKey",
+                        "in": "path",
+                        "description": "The combination of remoteSystem and remoteKey uniquely defines an object."
+                    },
+                    {
+                        "name": "context",
+                        "in": "query",
+                        "description": "The fraud context for which to return assessements.  If not provided, all assessments for the specified object are returned."
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/entity\/{remote_system_id}\/{external_remote_reference}": {
+            "get": {
+                "summary": "Retrieve set of identities considered to be the same entity",
+                "description": "This method is used to retrieve the set of individuals (or organizations) that are considered the same as the provided party reference",
+                "operationId": "GetResolvedEntityByRef",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "remote_system_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "external_remote_reference",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/match": {
+            "get": {
+                "summary": "Determine if one object is a match to the other.",
+                "description": "Using the provided objects, determine if one is a 'match' of the other",
+                "operationId": "GetMatchedObject",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "objectId1",
+                        "in": "query",
+                        "description": "Object id of first object"
+                    },
+                    {
+                        "name": "objectId2",
+                        "in": "query",
+                        "description": "Object id of second object"
+                    },
+                    {
+                        "name": "objectStereotype",
+                        "in": "query",
+                        "description": "stereotype of the objects being compared"
+                    },
+                    {
+                        "name": "updateResolvedEntities",
+                        "in": "query",
+                        "description": "Boolean to indicate whether or not to record relationship"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/entity\/match": {
+            "get": {
+                "summary": "Get a list of resolved objects from resolved entities for a given object.",
+                "description": "Get a list of resolved objects from resolved entities for a given object. Using the provided object ID, produce a list of all objects of the same business object type that have been determined to be 'matches'.",
+                "operationId": "GetMatchedEntity",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Object id of the object"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Stereotype for object"
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Number of objects to return; all if not included"
+                    },
+                    {
+                        "name": "logicalType",
+                        "in": "query",
+                        "description": "Metadata element ID for a business object"
+                    },
+                    {
+                        "name": "threshold",
+                        "in": "query",
+                        "description": "Minimum matching score to include a resolved entity; defaults to system property if not supplied"
+                    },
+                    {
+                        "name": "returnFlag",
+                        "in": "query",
+                        "description": "Default value == 2"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/entity\/{id}": {
+            "get": {
+                "summary": "Get the data for the resolved entity id.",
+                "description": "Using the provided party id, obtain the entity id",
+                "operationId": "GetResolvedEntityById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "Entity",
+                        "in": "body",
+                        "description": "A JSON structure that provide the details of an entity"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/entitysearch": {
+            "post": {
+                "summary": "Search for objects that match the search terms specified.",
+                "description": "Search for objects that match the search terms specified.  The searchType refers to the type of object being searched for. Valid values include: Folio,Account,Event,Group,PhysicalObject,Party,Transaction,Any. Note that paging and ordering is not supported for type Any.  The parameter globalsearch represents a global search string with support for the * wildcard.  The propertysearch fields are a list of searches for matching on specified fields of an object.",
+                "operationId": "EntitySearch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/entity\/relatedparties\/{systemId}\/{remoteReference}": {
+            "get": {
+                "summary": "This method is used to retrieve the set of explicitly related parties and implicitly related entities for the supplied externally sourced reference party",
+                "description": "A data source must be configured in the appropriate server.xml to use ISII. Ensure that the following has been included:\n\n&lt;dataSource beginTranForResultSetScrollingAPIs=\"false\" id=\"ISIIDB\" isolationLevel=\"TRANSACTION_READ_COMMITTED\" jndiName=\"jdbc\/isii\"&gt;\n\n&lt;jdbcDriver javax.sql.DataSource=\"com.ibm.db2.jcc.DB2XADataSource\" libraryRef=\"DB2_LIB\"\/&gt;\n\n&lt;properties.db2.jcc databaseName=\"ISII\" password=\"${isii_db_pass}\" portNumber=\"${isii_db_port}\" serverName=\"${isii_host}\" user=\"${isii_db_",
+                "operationId": "GetRelatedObjects",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "systemId",
+                        "in": "path",
+                        "description": "Remote reference system ID"
+                    },
+                    {
+                        "name": "remoteReference",
+                        "in": "path",
+                        "description": "Remote reference object key"
+                    },
+                    {
+                        "name": "minRelatedScore",
+                        "in": "query",
+                        "description": "Minimum matching score for implicit relationships"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/event": {
+            "put": {
+                "summary": "Insert event data into the database",
+                "description": "This method is used to insert event data into the database.  The XML schema is defined in the EVENT.XSD file.",
+                "operationId": "PutEvent",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/event\/{id}": {
+            "get": {
+                "summary": "Retrieve event data from the database, for the id",
+                "description": "This method is used to retrieve event data from the database",
+                "operationId": "GetEvent",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/group": {
+            "put": {
+                "summary": "Insert group data into the database",
+                "description": "This method is used to insert group data into the database.  The XML schema is defined in the GROUP.XSD file.",
+                "operationId": "PutGroup",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/group\/{id}": {
+            "get": {
+                "summary": "Retrieve group data from the database, for the specific group id",
+                "description": "This method is used to retrieve specific group data from the database",
+                "operationId": "GetGroup",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/party": {
+            "put": {
+                "summary": "Insert party data into the database",
+                "description": "This method is used to insert party data into the database.  The XML schema is defined in the PARTY.XSD file.",
+                "operationId": "PutParty",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/party\/{id}": {
+            "get": {
+                "summary": "Retrieve party data from the database, for the id",
+                "description": "This method is used to retrieve party data from the database",
+                "operationId": "GetParty",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/physical_object": {
+            "put": {
+                "summary": "Insert physical object data into the database",
+                "description": "This method is used to insert physical object data into the database.  The XML schema is defined in the PhysicalObject.XSD file.",
+                "operationId": "PutPhysicalObject",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/physical_object\/{id}": {
+            "get": {
+                "summary": "Retrieve a specific physical object data from the database, based on its internal id",
+                "description": "This method is used to retrieve specific physical object data from the database, based on its internal id",
+                "operationId": "GetPhysicalObject",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/screen": {
+            "get": {
+                "summary": "Screen a specific attribute against a dynamic list",
+                "description": "This method is used to screen data against a specific list of values, resulting in a JSON object containing a list of matching objects",
+                "operationId": "Screen",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "context",
+                        "in": "query",
+                        "description": "The fraud context for which to return assessements.  If not provided, all assessments for the specified object are returned."
+                    },
+                    {
+                        "name": "values",
+                        "in": "query",
+                        "description": "Comma separated list of values to search for in the local database"
+                    },
+                    {
+                        "name": "objectType",
+                        "in": "query",
+                        "description": "Business object name of the objects to search"
+                    },
+                    {
+                        "name": "fieldName",
+                        "in": "query",
+                        "description": "Field of the logical object to be searched"
+                    },
+                    {
+                        "name": "style",
+                        "in": "query",
+                        "description": "Searching style, defaults to SMART_MATCH"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Used when more then max set of objects meet the criteria; when paging is required, this represents the paging offset"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/transaction": {
+            "put": {
+                "summary": "Insert transaction data into the database",
+                "description": "This method is used to insert transaction data into the database.  The XML schema is defined in the TRANSACTION.XSD file.",
+                "operationId": "PutTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/transaction\/{id}": {
+            "get": {
+                "summary": "Retrieve transaction data from the database, by its internal id",
+                "description": "This method is used to retrieve transaction data from the database",
+                "operationId": "GetTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/watchlist": {
+            "get": {
+                "summary": "Retrieve a list of the registered watchlists",
+                "description": "This method is used to retrieve the list of registered watchlists from the database",
+                "operationId": "GetWatchlists",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Persist the provided watchlist into the local database",
+                "description": "This method is used to persist the contents of a watchlist into the database.  Note: This method uses some data import functionality to create business object entries, then calls putWatchlist to create\/update a watchlist for the provided identifier, and finally calls putWatchlistItem for every object created. This one also has the caveat of needing a disposition defined, but in this case all you need to pass in is the stereotype value.",
+                "operationId": "UploadWatchlist",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "identifier",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "overwrite",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "disposition",
+                        "in": "query",
+                        "description": "watchlist_disposition stereotype"
+                    },
+                    {
+                        "name": "data",
+                        "in": "formData",
+                        "description": "CSV file containing an external watchlist"
+                    },
+                    {
+                        "name": "properties",
+                        "in": "formData",
+                        "description": "A .properties file used for data import"
+                    },
+                    {
+                        "name": "dataName",
+                        "in": "formData",
+                        "description": "CSV file name"
+                    },
+                    {
+                        "name": "propertiesName",
+                        "in": "formData",
+                        "description": "Properties file name"
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/fact\/watchlist\/{id}": {
+            "get": {
+                "summary": "Retrieve the contents of a watchlist, based on its id",
+                "description": "This method is used to retrieve the contents of a watchlist from the database",
+                "operationId": "GetWatchlistById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "summary",
+                        "in": "query",
+                        "description": "If set to true, this flag will cause inclusion any Watchlist_Item_Properties associated with the item."
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/folio_management\/folio\/{id}": {
+            "get": {
+                "summary": "Retrieve details of a folio, by its internal id",
+                "description": "This method is used to retrieve the folio contents from the database",
+                "operationId": "GetFolioById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/ibm\/fci\/platform\/logical_object\/search": {
+            "post": {
+                "summary": "Retrieve business objects using the specified parameters",
+                "description": "This method provides searches for business objects within the database.  The results for searching on a time stamp field are affected by the way that DB2\u00c2\u00ae handles time stamps. The JSON string uses ISO format for time stamps, such as 2016-06-15T20:11:19.326-04:00. DB2 converts this value to 2016-06-15-20.11.19.326000. Because DB2 might add more precision by storing a time stamp as 2016-06-15-20.11.19.326nnnn, the search results might not return what is expected. Refer to your DB2 documentation",
+                "operationId": "SearchInstanceData",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "IBM",
+                        "in": "header",
+                        "description": "Userid \/ password for user with appropriate role"
+                    },
+                    {
+                        "name": "lob_type",
+                        "in": "query",
+                        "description": "A valid business object type."
+                    },
+                    {
+                        "name": "start_idx",
+                        "in": "query",
+                        "description": "The starting index of the matching records to return. This is a 0-based value. For example, a value of 3 would return results starting at the fourth matching record."
+                    },
+                    {
+                        "name": "prominence",
+                        "in": "query",
+                        "description": "Prominence level of the fields that you want returned.  A prominence value is required for each logical object field when the business object is created."
+                    },
+                    {
+                        "name": "rec_count",
+                        "in": "query",
+                        "description": "The number of matching records to return."
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "HttpAnalysisResponse": {
+                "type": "object",
+                "properties": {
+                    "errorCode": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "analyticCount": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "recordCount": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "errorCount": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "analysisResponses": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FraudSummary": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "FraudAssessment": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AssessmentResponse": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "assessmentScore": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "assessmentTimestamp": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "context": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "disposition": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ResultProperty": {
+                "type": "object",
+                "properties": {
+                    "propertyValue": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "propertyType": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "propertyForm": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "level": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "XmlReference": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ResultFolio": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "focalObjectId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "focalObjectType": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "focalObjectRemoteKey": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "focalObjectRemoteSystem": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "children": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ResultDetails": {
+                "type": "object",
+                "properties": {
+                    "resultObjects": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectRefs": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "resultProperties": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Error1": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "level": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ResultFolioList": {
+                "type": "object",
+                "properties": {
+                    "folio": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ObjectRef2": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectType": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AssessmentResult": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "score": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "context": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "processedStatus": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "children": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisResponse": {
+                "type": "object",
+                "properties": {
+                    "resultData": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "analysisRunID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisRequestInput": {
+                "type": "object",
+                "properties": {
+                    "messageData": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ARInput": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "systemId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectType": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "SameEntity": {
+                "type": "object",
+                "properties": {
+                    "sameParties": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "UniqueEntity": {
+                "type": "object",
+                "properties": {
+                    "internalId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "externalRemoteId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisAssessedResults": {
+                "type": "object",
+                "properties": {
+                    "remoteSystemRef": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisAssessedResultData": {
+                "type": "object",
+                "properties": {
+                    "score": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "focalObject": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "context": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisAssessedResultDetails": {
+                "type": "object",
+                "properties": {
+                    "score": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "focalObject": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "context": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "resultObjects": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "resultProperties": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisResponseResultObjects": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AnalysisResponseResultProperties": {
+                "type": "object",
+                "properties": {
+                    "propertyType": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "propertyValue": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "WatchListItem": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "stereotype": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "LOB_SearchRequest": {
+                "type": "object",
+                "properties": {
+                    "searchField": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "searchOp": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "searchValue": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Event": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Group": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Party": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Transaction": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Physical_Object": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioData": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "key": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "score": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dueTimestamp": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "lockedBy": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "lockedTimestamp": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioBaskets": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioMembers": {
+                "type": "object",
+                "properties": {
+                    "authorizedRole": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioState": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioProperty": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioPropertyForm": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioPropertyType": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioPriority": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "order": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioContext": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "order": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "FolioValue": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Description": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "isDetection": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Stereotype1": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "typeTable": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchNode": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "propertysearch": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchRequest": {
+                "type": "object",
+                "properties": {
+                    "context": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchResponse": {
+                "type": "object",
+                "properties": {
+                    "moreDataAvailable": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "totalResults": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchResponseResult": {
+                "type": "object",
+                "properties": {
+                    "search_results": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "PropertySearch": {
+                "type": "object",
+                "properties": {
+                    "style": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "Name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "values": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "PropertySearchValues": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchPage": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "offset": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchSort": {
+                "type": "object",
+                "properties": {
+                    "fields": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "order": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntitySearchSortField": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntityObjectDetails": {
+                "type": "object",
+                "properties": {
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectType": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "SystemType": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "typeTable": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EntityObject": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "entityReference": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "score": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "RemoteKeyReference": {
+                "type": "object",
+                "properties": {
+                    "systemId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectType": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "remoteKey": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ExplicitRelatedRef": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ImplicitRelatedRef": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "entityId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "relatedToId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "relatedPartyId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "likeScore": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "relatedScore": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "matchRule": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "RelatedEntities": {
+                "type": "object",
+                "properties": {
+                    "implicitRelatedEntities": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "remoteKey": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "objectID": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "explicitRelatedEntities": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            }
+        }
+    }
+}
