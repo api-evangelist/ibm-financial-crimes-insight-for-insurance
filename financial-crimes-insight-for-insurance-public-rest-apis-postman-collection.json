@@ -1,0 +1,1273 @@
+{
+    "id": "a069ca73e3e8681bfee0d5bf4c9053aa",
+    "name": "Financial Crimes Insight for Insurance public REST APIs",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "fc2805cd8499e84dffb0811e4899ec94",
+            "name": "Request a managed analysis to run",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/data_access\/analysis_request",
+            "description": "This service can be used to initiate a managed analysis",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "waitTime",
+                    "description": "wait for NN seconds, and if no response continue",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "08e20265d0dde769d58314f76039abe7",
+            "name": "Submit assessments from monitored analytics",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/external_alert\/analysis_result",
+            "description": "This method is used to submit analysis results from monitored analysis",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "AnalysisAssessedResults",
+                    "description": "An XML object corresponding to the AnalysisAssessedResults",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "b9528e6c0f9418f0683f476016ef301f",
+            "name": "Obtain security token for REST execution",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/token_service\/token",
+            "description": "In addition to a username and password required to execute a REST service, the platform supports enhanced cross site scripting detection and requires a service token for REST API execution.  REST services will need to supply the token as both cookie and header in a REST request. ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "0ed8590ba34da7219e415d714a73f6a8",
+            "name": "Insert account data into the database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/account",
+            "description": "This method is used to insert account data into the database.  The XML schema is defined in the ACCOUNT.XSD file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "e33321c9af4b6b5e8b16405f0f7aebe2",
+            "name": "Retrieve account data from the database, for the id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/account\/{id}",
+            "description": "This method is used to retrieve account data from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "d99b76a0853c590284df4af15227992b",
+            "name": "Return the existing assessments for the object specified",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/{type}\/{remoteSystem}\/{remoteKey}\/assessments]",
+            "description": "This service is used to return the existing assessments for the object specified.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "Type of object; party, account, transaction, event, or other defined object type.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "remoteSystem",
+                    "description": "The combination of remoteSystem and remoteKey uniquely defines an object.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "remoteKey",
+                    "description": "The combination of remoteSystem and remoteKey uniquely defines an object.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "context",
+                    "description": "The fraud context for which to return assessements.  If not provided, all assessments for the specified object are returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "f26b808fca4ae57463a32b17df9ddc84",
+            "name": "Retrieve set of identities considered to be the same entity",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/{remote_system_id}\/{external_remote_reference}",
+            "description": "This method is used to retrieve the set of individuals (or organizations) that are considered the same as the provided party reference",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "remote_system_id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "external_remote_reference",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "ad8de9f69e24585db142b24e565f3710",
+            "name": "Determine if one object is a match to the other.",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/match",
+            "description": "Using the provided objects, determine if one is a 'match' of the other",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "objectId1",
+                    "description": "Object id of first object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "objectId2",
+                    "description": "Object id of second object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "objectStereotype",
+                    "description": "stereotype of the objects being compared",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "updateResolvedEntities",
+                    "description": "Boolean to indicate whether or not to record relationship",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "9b85f71965f007ed722f23d0105cc7f5",
+            "name": "Get a list of resolved objects from resolved entities for a given object.",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/match",
+            "description": "Get a list of resolved objects from resolved entities for a given object. Using the provided object ID, produce a list of all objects of the same business object type that have been determined to be 'matches'.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "Object id of the object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "type",
+                    "description": "Stereotype for object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "count",
+                    "description": "Number of objects to return; all if not included",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "logicalType",
+                    "description": "Metadata element ID for a business object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "threshold",
+                    "description": "Minimum matching score to include a resolved entity; defaults to system property if not supplied",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "returnFlag",
+                    "description": "Default value == 2",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "641db2c8d3053d7c7e3307625f8e9987",
+            "name": "Get the data for the resolved entity id.",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/{id}",
+            "description": "Using the provided party id, obtain the entity id",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Entity",
+                    "description": "A JSON structure that provide the details of an entity",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "81f979bda25e909173ef398c82bff0ae",
+            "name": "Search for objects that match the search terms specified.",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entitysearch",
+            "description": "Search for objects that match the search terms specified.  The searchType refers to the type of object being searched for. Valid values include: Folio,Account,Event,Group,PhysicalObject,Party,Transaction,Any. Note that paging and ordering is not supported for type Any.  The parameter globalsearch represents a global search string with support for the * wildcard.  The propertysearch fields are a list of searches for matching on specified fields of an object.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "9933b5f3bf544872b19d44b33df94253",
+            "name": "This method is used to retrieve the set of explicitly related parties and implicitly related entities for the supplied externally sourced reference party",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/relatedparties\/{systemId}\/{remoteReference}",
+            "description": "A data source must be configured in the appropriate server.xml to use ISII. Ensure that the following has been included:\n\n&lt;dataSource beginTranForResultSetScrollingAPIs=\"false\" id=\"ISIIDB\" isolationLevel=\"TRANSACTION_READ_COMMITTED\" jndiName=\"jdbc\/isii\"&gt;\n\n&lt;jdbcDriver javax.sql.DataSource=\"com.ibm.db2.jcc.DB2XADataSource\" libraryRef=\"DB2_LIB\"\/&gt;\n\n&lt;properties.db2.jcc databaseName=\"ISII\" password=\"${isii_db_pass}\" portNumber=\"${isii_db_port}\" serverName=\"${isii_host}\" user=\"${isii_db_",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "systemId",
+                    "description": "Remote reference system ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "remoteReference",
+                    "description": "Remote reference object key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "minRelatedScore",
+                    "description": "Minimum matching score for implicit relationships",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "97a9f4951775609b39d01e90dfbbd32d",
+            "name": "Insert event data into the database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/event",
+            "description": "This method is used to insert event data into the database.  The XML schema is defined in the EVENT.XSD file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "9e391726518b0bfd2c31b47380643dab",
+            "name": "Retrieve event data from the database, for the id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/event\/{id}",
+            "description": "This method is used to retrieve event data from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "af0fd498cab90b77d1e7f8b55bf4b41e",
+            "name": "Insert group data into the database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/group",
+            "description": "This method is used to insert group data into the database.  The XML schema is defined in the GROUP.XSD file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "d81acb22549230c37b8a376c3de97174",
+            "name": "Retrieve group data from the database, for the specific group id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/group\/{id}",
+            "description": "This method is used to retrieve specific group data from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "8e4c4eb2ace5a17efa96d4877e1c076c",
+            "name": "Insert party data into the database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/party",
+            "description": "This method is used to insert party data into the database.  The XML schema is defined in the PARTY.XSD file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "eb03bf8df4d0511b17852eb0cc1aabb9",
+            "name": "Retrieve party data from the database, for the id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/party\/{id}",
+            "description": "This method is used to retrieve party data from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "084e0998b8da288c684cc187d9270458",
+            "name": "Insert physical object data into the database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/physical_object",
+            "description": "This method is used to insert physical object data into the database.  The XML schema is defined in the PhysicalObject.XSD file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "5983c1f9d9fe24af68af13e4c21d7bf7",
+            "name": "Retrieve a specific physical object data from the database, based on its internal id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/physical_object\/{id}",
+            "description": "This method is used to retrieve specific physical object data from the database, based on its internal id",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "504fbc3205a9ec53eef70f37d01cec2f",
+            "name": "Screen a specific attribute against a dynamic list",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/screen",
+            "description": "This method is used to screen data against a specific list of values, resulting in a JSON object containing a list of matching objects",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "context",
+                    "description": "The fraud context for which to return assessements.  If not provided, all assessments for the specified object are returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "values",
+                    "description": "Comma separated list of values to search for in the local database",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "objectType",
+                    "description": "Business object name of the objects to search",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fieldName",
+                    "description": "Field of the logical object to be searched",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "style",
+                    "description": "Searching style, defaults to SMART_MATCH",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Used when more then max set of objects meet the criteria; when paging is required, this represents the paging offset",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "abdd8a2c5f83fdce6a7dc3be55931ae2",
+            "name": "Insert transaction data into the database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/transaction",
+            "description": "This method is used to insert transaction data into the database.  The XML schema is defined in the TRANSACTION.XSD file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "feb8542a96bad3e0caea1b86a4ae750d",
+            "name": "Retrieve transaction data from the database, by its internal id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/transaction\/{id}",
+            "description": "This method is used to retrieve transaction data from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "91e9d335fd26822a1f2a0aba0aa0c712",
+            "name": "Retrieve a list of the registered watchlists",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/watchlist",
+            "description": "This method is used to retrieve the list of registered watchlists from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "8f9a875f0a0199d26f1acc9d30eca2f1",
+            "name": "Persist the provided watchlist into the local database",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/watchlist",
+            "description": "This method is used to persist the contents of a watchlist into the database.  Note: This method uses some data import functionality to create business object entries, then calls putWatchlist to create\/update a watchlist for the provided identifier, and finally calls putWatchlistItem for every object created. This one also has the caveat of needing a disposition defined, but in this case all you need to pass in is the stereotype value.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "identifier",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "overwrite",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "disposition",
+                    "description": "watchlist_disposition stereotype",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "data",
+                    "description": "CSV file containing an external watchlist",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "properties",
+                    "description": "A .properties file used for data import",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "dataName",
+                    "description": "CSV file name",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "propertiesName",
+                    "description": "Properties file name",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "40fc4fe575da5c3afb87015a571fc288",
+            "name": "Retrieve the contents of a watchlist, based on its id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/watchlist\/{id}",
+            "description": "This method is used to retrieve the contents of a watchlist from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "summary",
+                    "description": "If set to true, this flag will cause inclusion any Watchlist_Item_Properties associated with the item.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "b8ca0bf2e4ed9c6f960041131a9e8b06",
+            "name": "Retrieve details of a folio, by its internal id",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/folio_management\/folio\/{id}",
+            "description": "This method is used to retrieve the folio contents from the database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "id",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        },
+        {
+            "id": "5b91783416a662d6db11e8ac331c5f02",
+            "name": "Retrieve business objects using the specified parameters",
+            "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/logical_object\/search",
+            "description": "This method provides searches for business objects within the database.  The results for searching on a time stamp field are affected by the way that DB2\u00c2\u00ae handles time stamps. The JSON string uses ISO format for time stamps, such as 2016-06-15T20:11:19.326-04:00. DB2 converts this value to 2016-06-15-20.11.19.326000. Because DB2 might add more precision by storing a time stamp as 2016-06-15-20.11.19.326nnnn, the search results might not return what is expected. Refer to your DB2 documentation",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "IBM",
+                    "description": "Userid \/ password for user with appropriate role",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lob_type",
+                    "description": "A valid business object type.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_idx",
+                    "description": "The starting index of the matching records to return. This is a 0-based value. For example, a value of 3 would return results starting at the fourth matching record.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "prominence",
+                    "description": "Prominence level of the fields that you want returned.  A prominence value is required for each logical object field when the business object is created.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "rec_count",
+                    "description": "The number of matching records to return.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "rawModeData": ""
+        }
+    ]
+}
