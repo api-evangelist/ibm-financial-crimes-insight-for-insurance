@@ -1,5 +1,5 @@
 {
-    "id": "a069ca73e3e8681bfee0d5bf4c9053aa",
+    "id": "8746b690a61a7f5a0b491a5a8ac8cab4",
     "name": "Financial Crimes Insight for Insurance public REST APIs",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "fc2805cd8499e84dffb0811e4899ec94",
+            "id": "697774b1721e43c62298d8a3d1d1f6c7",
             "name": "Request a managed analysis to run",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/data_access\/analysis_request",
             "description": "This service can be used to initiate a managed analysis",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "08e20265d0dde769d58314f76039abe7",
+            "id": "d437d44f77b131dbd3b89fc97d749900",
             "name": "Submit assessments from monitored analytics",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/external_alert\/analysis_result",
             "description": "This method is used to submit analysis results from monitored analysis",
@@ -89,11 +89,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "b9528e6c0f9418f0683f476016ef301f",
+            "id": "e3e7657b8ab7282e4f27a2be49ce80f3",
             "name": "Obtain security token for REST execution",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/token_service\/token",
             "description": "In addition to a username and password required to execute a REST service, the platform supports enhanced cross site scripting detection and requires a service token for REST API execution.  REST services will need to supply the token as both cookie and header in a REST request. ",
@@ -120,11 +120,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "0ed8590ba34da7219e415d714a73f6a8",
+            "id": "851a63dfba1ab0d257b7c134adb7f1fa",
             "name": "Insert account data into the database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/account",
             "description": "This method is used to insert account data into the database.  The XML schema is defined in the ACCOUNT.XSD file.",
@@ -151,11 +151,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "e33321c9af4b6b5e8b16405f0f7aebe2",
+            "id": "440081eb874006d69cb7ae7a6e37c5f7",
             "name": "Retrieve account data from the database, for the id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/account\/{id}",
             "description": "This method is used to retrieve account data from the database",
@@ -189,11 +189,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "d99b76a0853c590284df4af15227992b",
+            "id": "6c0fe831b0e95de3e2e7bc9e33ed9f7f",
             "name": "Return the existing assessments for the object specified",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/{type}\/{remoteSystem}\/{remoteKey}\/assessments]",
             "description": "This service is used to return the existing assessments for the object specified.",
@@ -248,11 +248,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "f26b808fca4ae57463a32b17df9ddc84",
+            "id": "db424e0d7ec09b4906af62704864d3e1",
             "name": "Retrieve set of identities considered to be the same entity",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/{remote_system_id}\/{external_remote_reference}",
             "description": "This method is used to retrieve the set of individuals (or organizations) that are considered the same as the provided party reference",
@@ -293,11 +293,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "ad8de9f69e24585db142b24e565f3710",
+            "id": "4a6aedefe7cca92740a8b436fa63acc9",
             "name": "Determine if one object is a match to the other.",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/match",
             "description": "Using the provided objects, determine if one is a 'match' of the other",
@@ -352,11 +352,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "9b85f71965f007ed722f23d0105cc7f5",
+            "id": "f1841e23eba7f204d5d3ab236eee39cc",
             "name": "Get a list of resolved objects from resolved entities for a given object.",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/match",
             "description": "Get a list of resolved objects from resolved entities for a given object. Using the provided object ID, produce a list of all objects of the same business object type that have been determined to be 'matches'.",
@@ -425,11 +425,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "641db2c8d3053d7c7e3307625f8e9987",
+            "id": "48a5d2fe963ae2370dfb225c584b1c3d",
             "name": "Get the data for the resolved entity id.",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/{id}",
             "description": "Using the provided party id, obtain the entity id",
@@ -470,11 +470,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "81f979bda25e909173ef398c82bff0ae",
+            "id": "9bf9efc796e6fdbc1ff0c0cfcfbc3022",
             "name": "Search for objects that match the search terms specified.",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entitysearch",
             "description": "Search for objects that match the search terms specified.  The searchType refers to the type of object being searched for. Valid values include: Folio,Account,Event,Group,PhysicalObject,Party,Transaction,Any. Note that paging and ordering is not supported for type Any.  The parameter globalsearch represents a global search string with support for the * wildcard.  The propertysearch fields are a list of searches for matching on specified fields of an object.",
@@ -508,11 +508,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "9933b5f3bf544872b19d44b33df94253",
+            "id": "7c65ac09eae1099ea867fcfb523ec2e0",
             "name": "This method is used to retrieve the set of explicitly related parties and implicitly related entities for the supplied externally sourced reference party",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/entity\/relatedparties\/{systemId}\/{remoteReference}",
             "description": "A data source must be configured in the appropriate server.xml to use ISII. Ensure that the following has been included:\n\n&lt;dataSource beginTranForResultSetScrollingAPIs=\"false\" id=\"ISIIDB\" isolationLevel=\"TRANSACTION_READ_COMMITTED\" jndiName=\"jdbc\/isii\"&gt;\n\n&lt;jdbcDriver javax.sql.DataSource=\"com.ibm.db2.jcc.DB2XADataSource\" libraryRef=\"DB2_LIB\"\/&gt;\n\n&lt;properties.db2.jcc databaseName=\"ISII\" password=\"${isii_db_pass}\" portNumber=\"${isii_db_port}\" serverName=\"${isii_host}\" user=\"${isii_db_",
@@ -553,11 +553,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "97a9f4951775609b39d01e90dfbbd32d",
+            "id": "ad99f17f898940bfaaf753abc10faa64",
             "name": "Insert event data into the database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/event",
             "description": "This method is used to insert event data into the database.  The XML schema is defined in the EVENT.XSD file.",
@@ -591,11 +591,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "9e391726518b0bfd2c31b47380643dab",
+            "id": "2e8ff498a1da7d771c4c216efe2bd4b8",
             "name": "Retrieve event data from the database, for the id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/event\/{id}",
             "description": "This method is used to retrieve event data from the database",
@@ -629,11 +629,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "af0fd498cab90b77d1e7f8b55bf4b41e",
+            "id": "1787cd92c755647cc41348b586ed7d39",
             "name": "Insert group data into the database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/group",
             "description": "This method is used to insert group data into the database.  The XML schema is defined in the GROUP.XSD file.",
@@ -667,11 +667,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "d81acb22549230c37b8a376c3de97174",
+            "id": "5afd5d45ffa05a7db332b86f19c8ff8b",
             "name": "Retrieve group data from the database, for the specific group id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/group\/{id}",
             "description": "This method is used to retrieve specific group data from the database",
@@ -705,11 +705,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "8e4c4eb2ace5a17efa96d4877e1c076c",
+            "id": "25e4389e1d7bf8168e7ca9ee6a693061",
             "name": "Insert party data into the database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/party",
             "description": "This method is used to insert party data into the database.  The XML schema is defined in the PARTY.XSD file.",
@@ -743,11 +743,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "eb03bf8df4d0511b17852eb0cc1aabb9",
+            "id": "47a531e937fe0f16fdf2094105f4ea59",
             "name": "Retrieve party data from the database, for the id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/party\/{id}",
             "description": "This method is used to retrieve party data from the database",
@@ -781,11 +781,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "084e0998b8da288c684cc187d9270458",
+            "id": "69ecd0514d040c3526ac72a3339c3e32",
             "name": "Insert physical object data into the database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/physical_object",
             "description": "This method is used to insert physical object data into the database.  The XML schema is defined in the PhysicalObject.XSD file.",
@@ -819,11 +819,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "5983c1f9d9fe24af68af13e4c21d7bf7",
+            "id": "b96c2505347f2c7d1360b1a2c77653cf",
             "name": "Retrieve a specific physical object data from the database, based on its internal id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/physical_object\/{id}",
             "description": "This method is used to retrieve specific physical object data from the database, based on its internal id",
@@ -857,11 +857,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "504fbc3205a9ec53eef70f37d01cec2f",
+            "id": "d8f4f5c4b5f4bce0def9294f64b82f11",
             "name": "Screen a specific attribute against a dynamic list",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/screen",
             "description": "This method is used to screen data against a specific list of values, resulting in a JSON object containing a list of matching objects",
@@ -930,11 +930,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "abdd8a2c5f83fdce6a7dc3be55931ae2",
+            "id": "fd234bd0d9620967a4b4f183025360ba",
             "name": "Insert transaction data into the database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/transaction",
             "description": "This method is used to insert transaction data into the database.  The XML schema is defined in the TRANSACTION.XSD file.",
@@ -968,11 +968,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "feb8542a96bad3e0caea1b86a4ae750d",
+            "id": "a50a0d8393b330d30f67e1f25f8f5f2a",
             "name": "Retrieve transaction data from the database, by its internal id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/transaction\/{id}",
             "description": "This method is used to retrieve transaction data from the database",
@@ -1006,11 +1006,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "91e9d335fd26822a1f2a0aba0aa0c712",
+            "id": "ba2403a1c3a22b33c122056228db9931",
             "name": "Retrieve a list of the registered watchlists",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/watchlist",
             "description": "This method is used to retrieve the list of registered watchlists from the database",
@@ -1037,11 +1037,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "8f9a875f0a0199d26f1acc9d30eca2f1",
+            "id": "769728876f991439f14d17da3bf2bfba",
             "name": "Persist the provided watchlist into the local database",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/watchlist",
             "description": "This method is used to persist the contents of a watchlist into the database.  Note: This method uses some data import functionality to create business object entries, then calls putWatchlist to create\/update a watchlist for the provided identifier, and finally calls putWatchlistItem for every object created. This one also has the caveat of needing a disposition defined, but in this case all you need to pass in is the stereotype value.",
@@ -1117,11 +1117,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "40fc4fe575da5c3afb87015a571fc288",
+            "id": "f9de6f6354526b13ef714c82e923991e",
             "name": "Retrieve the contents of a watchlist, based on its id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/fact\/watchlist\/{id}",
             "description": "This method is used to retrieve the contents of a watchlist from the database",
@@ -1162,11 +1162,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "b8ca0bf2e4ed9c6f960041131a9e8b06",
+            "id": "9c3b09e4a1e3867078c26f060be7492f",
             "name": "Retrieve details of a folio, by its internal id",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/folio_management\/folio\/{id}",
             "description": "This method is used to retrieve the folio contents from the database",
@@ -1200,11 +1200,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         },
         {
-            "id": "5b91783416a662d6db11e8ac331c5f02",
+            "id": "4fef5a16130ddd0b71404f2660f9eee5",
             "name": "Retrieve business objects using the specified parameters",
             "url": "httpsfcihost.ibm.com:9443\/\/ibm\/fci\/platform\/logical_object\/search",
             "description": "This method provides searches for business objects within the database.  The results for searching on a time stamp field are affected by the way that DB2\u00c2\u00ae handles time stamps. The JSON string uses ISO format for time stamps, such as 2016-06-15T20:11:19.326-04:00. DB2 converts this value to 2016-06-15-20.11.19.326000. Because DB2 might add more precision by storing a time stamp as 2016-06-15-20.11.19.326nnnn, the search results might not return what is expected. Refer to your DB2 documentation",
@@ -1266,7 +1266,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a069ca73e3e8681bfee0d5bf4c9053aa",
+            "collectionId": "8746b690a61a7f5a0b491a5a8ac8cab4",
             "rawModeData": ""
         }
     ]
