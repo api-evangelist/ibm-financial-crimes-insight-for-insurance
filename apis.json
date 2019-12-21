@@ -9,8 +9,8 @@
         "relative data",
         "service api"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-21",
+    "modified": "2019-12-21",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/ibm-financial-crimes-insight-for-insurance\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -24,21 +24,21 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/financial-crimes-insight-for-insurance-public-rest-apis-openapi.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/ibm-financial-crimes-insight-for-insurance\/master\/financial-crimes-insight-for-insurance-public-rest-apis-openapi.json"
                 },
                 {
                     "type": "x-openapi",
                     "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/financial-crimes-insight-for-insurance-public-rest-apis.json"
-                },
-                {
-                    "type": "x-postman-collecction",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/financial-crimes-insight-for-insurance-public-rest-apis-postman-collection.json"
                 }
             ]
         }
     ],
     "include": [],
     "x-common": [
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
+        },
         {
             "type": "Pricing",
             "url": "https:\/\/www-01.ibm.com\/common\/ssi\/cgi-bin\/ssialias?infotype=AN&subtype=CA&htmlfid=897\/ENUS218-305&appname=USN#echargex"
